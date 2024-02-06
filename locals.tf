@@ -8,8 +8,15 @@ locals {
         "fem-eci-tfe" = {
             description = "Example description of works"
             project_id = module.project["fem-eci-project"].id
-            vcs_repo_identifier = "prhineh1/fem-eci-terraform-tfe"
+            vcs_repo_identifier = "${var.github_ogranization_name}/fem-eci-terraform-tfe"
             execution_mode = "remote"
+        }
+
+        "fem-eci-github" = {
+            description = "Example automation workspace"
+            execution_mode = "local"
+            project_id = module.project["fem-eci-project"].id
+            vcs_repo_identifier = "${var.github_ogranization_name}/fem-eci-terraform-github"
         }
     }
 }
